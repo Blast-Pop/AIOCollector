@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="AIOCollector:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/AIOCollector_jar</output-path>
+    <root id="archive" name="AIOCollector.jar">
+      <element id="module-output" name="AIOCollector" />
+    </root>
+  </artifact>
+</component>
