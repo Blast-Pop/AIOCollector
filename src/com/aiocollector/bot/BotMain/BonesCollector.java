@@ -30,7 +30,6 @@ public class BonesCollector {
     private void collect() {
         Area bonesArea = new Area(3244, 3296, 3264, 3257);  // Zone des bones à Lumbridge
         if (!bonesArea.contains(Players.getLocal())) {
-            // Se déplacer à la zone de collecte si le joueur n'y est pas
             Tile randomTile = bonesArea.getRandomTile();
             Walking.walk(randomTile);
             script.sleep(randomDelay(1500, 3000));  // Pause aléatoire
@@ -39,7 +38,6 @@ public class BonesCollector {
             if (bones != null && bones.interact("Take")) {
                 script.sleep(randomDelay(1000, 1500));  // Pause après interaction
             } else {
-                // Se déplacer aléatoirement si aucun bone n'est trouvé
                 Tile randomTile = bonesArea.getRandomTile();
                 Walking.walk(randomTile);
                 script.sleep(randomDelay(2000, 3000));  // Attendre avant de vérifier à nouveau

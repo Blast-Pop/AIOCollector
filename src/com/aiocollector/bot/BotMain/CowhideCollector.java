@@ -30,7 +30,6 @@ public class CowhideCollector {
     private void collect() {
         Area cowArea = new Area(3244, 3296, 3264, 3257);  // Zone des vaches à Lumbridge
         if (!cowArea.contains(Players.getLocal())) {
-            // Se déplacer à la zone de collecte si le joueur n'y est pas
             Tile randomTile = cowArea.getRandomTile();
             Walking.walk(randomTile);
             script.sleep(randomDelay(1500, 3000));  // Pause aléatoire
@@ -39,7 +38,6 @@ public class CowhideCollector {
             if (cowhide != null && cowhide.interact("Take")) {
                 script.sleep(randomDelay(1000, 1500));  // Pause après interaction
             } else {
-                // Se déplacer aléatoirement si aucune peau n'est trouvée
                 Tile randomTile = cowArea.getRandomTile();
                 Walking.walk(randomTile);
                 script.sleep(randomDelay(2000, 3000));  // Attendre avant de vérifier à nouveau
@@ -48,8 +46,7 @@ public class CowhideCollector {
     }
 
     private void goToBank() {
-        // Zone de la banque à Lumbridge
-        Area bankArea = new Area(3206, 3214, 3211, 3220, 2);
+        Area bankArea = new Area(3206, 3214, 3211, 3220, 2);  // Zone de la banque à Lumbridge
         if (!bankArea.contains(Players.getLocal())) {
             Walking.walk(bankArea.getRandomTile());
         } else {
