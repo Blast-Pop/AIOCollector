@@ -13,18 +13,22 @@ public class BotMain extends AbstractScript {
     private JFrame uiFrame;
     private JButton startCowhideButton;
     private JButton startBonesButton;
+    private JButton startBonesBuryButton;  // New button for BonesBurier
     private JButton stopButton;
     private CowhideCollector cowhideCollector;
     private BonesCollector bonesCollector;
+    private BonesBurier bonesBurier;  // New BonesBurier instance
     private boolean isCollectingCowhide = false;
     private boolean isCollectingBones = false;
+    private boolean isBuryingBones = false;  // Flag to control burying bones
 
     @Override
     public void onStart() {
         // Créer l'UI au démarrage du script
         createUI();
-        cowhideCollector = new CowhideCollector(this);// Crée l'instance de CowhideCollector
-        bonesCollector = new BonesCollector(this);
+        cowhideCollector = new CowhideCollector(this);  // Crée l'instance de CowhideCollector
+        bonesCollector = new BonesCollector(this);  // Crée l'instance de BonesCollector
+        bonesBurier = new BonesBurier(this);  // Crée l'instance de BonesBurier
         log("Script started. Awaiting user interaction.");
     }
 
@@ -39,6 +43,10 @@ public class BotMain extends AbstractScript {
         if (isCollectingBones) {
             log("Collecting Bones...");
             bonesCollector.collectBones();
+        }
+        if (isBuryingBones) {
+            log("Burying Bones...");
+            bonesBurier.buryBones();  // Utilise BonesBurier pour enterrer les bones
         }
         log("Script is idle.");
         return 500;  // Aucune action si la collecte n'est pas activée
@@ -59,10 +67,19 @@ public class BotMain extends AbstractScript {
                 uiFrame.dispose();    // Ferme l'UI une fois la collecte lancée
             });
 
+            // Bouton pour commencer la collecte des Bones
             startBonesButton = new JButton("Start Bones Collector");
             startBonesButton.addActionListener(e -> {
                 log("Starting Bones Collector...");
                 isCollectingBones = true;
+                uiFrame.dispose();  // Ferme l'UI une fois la collecte lancée
+            });
+
+            // Nouveau bouton pour commencer à enterrer les Bones
+            startBonesBuryButton = new JButton("Start Bones Burying");
+            startBonesBuryButton.addActionListener(e -> {
+                log("Starting Bones Burying...");
+                isBuryingBones = true;  // Active l'enterrement des bones
                 uiFrame.dispose();
             });
 
@@ -76,6 +93,7 @@ public class BotMain extends AbstractScript {
             // Ajouter les boutons à la fenêtre
             uiFrame.add(startCowhideButton);
             uiFrame.add(startBonesButton);
+            uiFrame.add(startBonesBuryButton);  // Ajouter le bouton pour enterrer les bones
             uiFrame.add(stopButton);
 
             uiFrame.setVisible(true);
