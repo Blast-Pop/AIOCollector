@@ -9,8 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ecde549-5517-42fd-bd46-cfc01b12f104" name="Changes" comment="Version 0.9&#10;FULL UPDATE:&#10;litte fix. First release&#10;____________________________________&#10;-- UI&#10;    - Collector&#10;        - Collect cowhide and bank it&#10;        - Collect Bones and Bank it.&#10;    - XP Farming&#10;        - Burry Bone&#10;        - Cook Raw beef">
+    <list default="true" id="1ecde549-5517-42fd-bd46-cfc01b12f104" name="Changes" comment="Version 0.10&#10;FULL UPDATE:&#10;litte fix. First release&#10;____________________________________&#10;-- UI&#10;    - Collector&#10;        - Collect cowhide and bank it&#10;        - Collect Bones and Bank it.&#10;    - XP Farming&#10;        - Burry Bone&#10;        - Cook Raw beef&#10;        - Woodcutting Tree at Varrock GE">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/aiocollector/bot/BotMain/BonesBurier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aiocollector/bot/BotMain/BonesBurier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/aiocollector/bot/BotMain/BotMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aiocollector/bot/BotMain/BotMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,24 +55,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Blast-Pop/DreamBot/BotData/client.jar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Blast-Pop/Documents/AIOCollector/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Blast-Pop/Documents/AIOCollector",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/Blast-Pop/Documents/AIOCollector/src/Main.java",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Blast-Pop\Documents\AIOCollector\src" />
@@ -97,7 +98,8 @@
       <workItem from="1731605059925" duration="12070000" />
       <workItem from="1731681700139" duration="262000" />
       <workItem from="1731706491077" duration="447000" />
-      <workItem from="1732119752994" duration="3984000" />
+      <workItem from="1732119752994" duration="10347000" />
+      <workItem from="1732168757777" duration="5353000" />
     </task>
     <task id="LOCAL-00001" summary="Version 0.5">
       <option name="closed" value="true" />
@@ -155,7 +157,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731706737961</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Version 0.10&#10;FULL UPDATE:&#10;litte fix. First release&#10;____________________________________&#10;-- UI&#10;    - Collector&#10;        - Collect cowhide and bank it&#10;        - Collect Bones and Bank it.&#10;    - XP Farming&#10;        - Burry Bone&#10;        - Cook Raw beef&#10;        - Woodcutting Tree at Varrock GE">
+      <option name="closed" value="true" />
+      <created>1732123855010</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1732123855011</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,6 +200,7 @@
     <MESSAGE value="Version 0.7&#10;-- Added Raw beef collector" />
     <MESSAGE value="Version 0.8&#10;FULL UPDATE:&#10;-- UI&#10;    - Collector&#10;        - Collect cowhide and bank it&#10;        - Collect Bones and Bank it.&#10;    - XP Farming&#10;        - Burry Bone&#10;        - Cook Raw beef" />
     <MESSAGE value="Version 0.9&#10;FULL UPDATE:&#10;litte fix. First release&#10;____________________________________&#10;-- UI&#10;    - Collector&#10;        - Collect cowhide and bank it&#10;        - Collect Bones and Bank it.&#10;    - XP Farming&#10;        - Burry Bone&#10;        - Cook Raw beef" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 0.9&#10;FULL UPDATE:&#10;litte fix. First release&#10;____________________________________&#10;-- UI&#10;    - Collector&#10;        - Collect cowhide and bank it&#10;        - Collect Bones and Bank it.&#10;    - XP Farming&#10;        - Burry Bone&#10;        - Cook Raw beef" />
+    <MESSAGE value="Version 0.10&#10;FULL UPDATE:&#10;litte fix. First release&#10;____________________________________&#10;-- UI&#10;    - Collector&#10;        - Collect cowhide and bank it&#10;        - Collect Bones and Bank it.&#10;    - XP Farming&#10;        - Burry Bone&#10;        - Cook Raw beef&#10;        - Woodcutting Tree at Varrock GE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 0.10&#10;FULL UPDATE:&#10;litte fix. First release&#10;____________________________________&#10;-- UI&#10;    - Collector&#10;        - Collect cowhide and bank it&#10;        - Collect Bones and Bank it.&#10;    - XP Farming&#10;        - Burry Bone&#10;        - Cook Raw beef&#10;        - Woodcutting Tree at Varrock GE" />
   </component>
 </project>

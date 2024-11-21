@@ -35,7 +35,7 @@ public class BonesBurier {
         } else {
             GroundItem bones = GroundItems.closest("Bones");  // Chercher les bones
             if (bones != null && bones.interact("Take")) {
-                script.sleep(randomDelay(1000, 1500));  // Pause après interaction
+                script.sleep(randomDelay(4500, 5500));  // Pause après interaction
             } else {
                 Tile randomTile = bonesArea.getRandomTile();
                 Walking.walk(randomTile);

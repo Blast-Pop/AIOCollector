@@ -9,7 +9,12 @@ import java.awt.*;
 import java.util.function.Supplier;
 import javax.swing.ImageIcon;
 
-@ScriptManifest(image = "C:\\Users\\Blast-Pop\\Documents\\AIOCollector\\icon\\MainIcon.png", author = "ThePoff", name = "TakeMeAll P'Diddy", version = 0.8, category = Category.MONEYMAKING, description = "Collects items with a UI.")
+@ScriptManifest(image = "C:\\Users\\Blast-Pop\\Documents\\AIOCollector\\icon\\MainIcon.png",
+        author = "ThePoff",
+        name = "TakeMeAll P'Diddy",
+        version = 0.12,
+        category = Category.MONEYMAKING,
+        description = "Collects items with a UI.")
 public class BotMain extends AbstractScript {
 
     private JFrame mainMenuFrame;
@@ -20,6 +25,7 @@ public class BotMain extends AbstractScript {
     private JButton startCowhideButton;
     private JButton startBonesButton;
     private JButton startRawbeefButton;
+    private JButton startSalmonButton; // Bouton pour SalmonCollector
 
     private JFrame farmingXPFrame;
     private JButton cookRawMeetButton;
@@ -30,17 +36,20 @@ public class BotMain extends AbstractScript {
     private RawbeefCollector rawbeefCollector;
     private CookRawbeef cookRawbeef;
     private Woodcutting woodcutting;
+    private SalmonCollector salmonCollector; // Instance du SalmonCollector
 
     private boolean isCollectingCowhide = false;
     private boolean isCollectingBones = false;
     private boolean isBuryingBones = false;
     private boolean isCollectingRawbeef = false;
+    private boolean isCollectingSalmon = false; // Indicateur pour SalmonCollector
     private boolean isCookingRawMeet = false;
     private boolean isCollectingWoodcutting = false;
 
     private boolean hasLoggedCowhideStart = false;
     private boolean hasLoggedBonesStart = false;
     private boolean hasLoggedRawbeefStart = false;
+    private boolean hasLoggedSalmonStart = false; // Journalisation pour SalmonCollector
     private boolean hasLoggedCookStart = false;
     private boolean hasLoggedWoodcuttingStart = false;
     private boolean hasLoggedScriptIdle = false;
@@ -54,21 +63,22 @@ public class BotMain extends AbstractScript {
         rawbeefCollector = new RawbeefCollector(this);
         cookRawbeef = new CookRawbeef(this);
         woodcutting = new Woodcutting(this);
+        salmonCollector = new SalmonCollector(this); // Initialisation du SalmonCollector
 
-        // Lancer un thread pour surveiller l'inactivité et arrêter le script si aucun choix n'est fait après un certain délai
+        // Thread pour arrêter le script après 30 secondes d'inactivité
         new Thread(() -> {
             try {
                 int idleTime = 0;
-                while (idleTime < 30) {  // Attendre jusqu'à 30 secondes sans interaction
-                    if (isCollectingCowhide || isCollectingBones || isBuryingBones || isCollectingRawbeef || isCookingRawMeet || isCollectingWoodcutting) {
-                        idleTime = 0;  // Réinitialiser le compteur d'inactivité si une action est lancée
+                while (idleTime < 30) { // Attendre 30 secondes sans interaction
+                    if (isCollectingCowhide || isCollectingBones || isBuryingBones || isCollectingRawbeef || isCollectingSalmon || isCookingRawMeet || isCollectingWoodcutting) {
+                        idleTime = 0; // Réinitialiser si une action démarre
                     } else {
                         idleTime++;
                     }
                     Thread.sleep(1000);
                 }
                 log("No action selected. Stopping the script.");
-                stop();  // Arrêter le script après 30 secondes d'inactivité
+                stop(); // Arrêter le script
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -76,7 +86,6 @@ public class BotMain extends AbstractScript {
 
         log("Script started. Awaiting user interaction.");
     }
-
 
     @Override
     public int onLoop() {
@@ -113,6 +122,15 @@ public class BotMain extends AbstractScript {
             return 500;
         }
 
+        if (isCollectingSalmon) {
+            if (!hasLoggedSalmonStart) {
+                log("Starting Salmon Collector...");
+                hasLoggedSalmonStart = true;
+            }
+            salmonCollector.collectSalmon(); // Exécuter SalmonCollector
+            return 500;
+        }
+
         if (isCookingRawMeet) {
             if (!hasLoggedCookStart) {
                 log("Starting to Cook Raw Meat...");
@@ -131,7 +149,6 @@ public class BotMain extends AbstractScript {
             return 500;
         }
 
-        // Si aucune action n'est en cours, le script est en mode idle
         if (!hasLoggedScriptIdle) {
             log("Script is idle.");
             hasLoggedScriptIdle = true;
@@ -194,7 +211,7 @@ public class BotMain extends AbstractScript {
             collectItemFrame.setLayout(new BorderLayout());
 
             JPanel buttonPanel = new JPanel();
-            buttonPanel.setLayout(new GridLayout(4, 1));
+            buttonPanel.setLayout(new GridLayout(5, 1)); // 5 boutons maintenant
 
             startCowhideButton = new JButton("Start Cowhide Collector");
             startCowhideButton.addActionListener(e -> {
@@ -214,6 +231,12 @@ public class BotMain extends AbstractScript {
                 collectItemFrame.dispose();
             });
 
+            startSalmonButton = new JButton("Start Salmon Collector"); // Nouveau bouton
+            startSalmonButton.addActionListener(e -> {
+                isCollectingSalmon = true;
+                collectItemFrame.dispose();
+            });
+
             JButton backButton = new JButton("Back");
             backButton.addActionListener(e -> {
                 collectItemFrame.dispose();
@@ -223,6 +246,7 @@ public class BotMain extends AbstractScript {
             buttonPanel.add(startCowhideButton);
             buttonPanel.add(startBonesButton);
             buttonPanel.add(startRawbeefButton);
+            buttonPanel.add(startSalmonButton); // Ajout du bouton pour SalmonCollector
             collectItemFrame.add(buttonPanel, BorderLayout.CENTER);
 
             JPanel backPanel = new JPanel();
@@ -238,11 +262,11 @@ public class BotMain extends AbstractScript {
         SwingUtilities.invokeLater(() -> {
             farmingXPFrame = new JFrame("Farming XP Menu");
             farmingXPFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-            farmingXPFrame.setSize(400, 200);
+            farmingXPFrame.setSize(400, 150);
             farmingXPFrame.setLayout(new BorderLayout());
 
             JPanel buttonPanel = new JPanel();
-            buttonPanel.setLayout(new GridLayout(4, 1));
+            buttonPanel.setLayout(new GridLayout(1, 1));
 
             cookRawMeetButton = new JButton("Cook Raw Meat");
             cookRawMeetButton.addActionListener(e -> {
@@ -250,17 +274,7 @@ public class BotMain extends AbstractScript {
                 farmingXPFrame.dispose();
             });
 
-            JButton startBonesBurierButton = new JButton("Bury Bones");
-            startBonesBurierButton.addActionListener(e -> {
-                isBuryingBones = true;
-                farmingXPFrame.dispose();
-            });
-
-            JButton startWoodcuttingButton = new JButton("Start Woodcutting");
-            startWoodcuttingButton.addActionListener(e -> {
-                isCollectingWoodcutting = true;
-                farmingXPFrame.dispose();
-            });
+            buttonPanel.add(cookRawMeetButton);
 
             JButton backButton = new JButton("Back");
             backButton.addActionListener(e -> {
@@ -268,9 +282,6 @@ public class BotMain extends AbstractScript {
                 createMainMenu();
             });
 
-            buttonPanel.add(cookRawMeetButton);
-            buttonPanel.add(startBonesBurierButton);
-            buttonPanel.add(startWoodcuttingButton);
             farmingXPFrame.add(buttonPanel, BorderLayout.CENTER);
 
             JPanel backPanel = new JPanel();
