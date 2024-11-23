@@ -9,10 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ecde549-5517-42fd-bd46-cfc01b12f104" name="Changes" comment="Version 0.10&#10;FULL UPDATE:&#10;litte fix. First release&#10;____________________________________&#10;-- UI&#10;    - Collector&#10;        - Collect cowhide and bank it&#10;        - Collect Bones and Bank it.&#10;    - XP Farming&#10;        - Burry Bone&#10;        - Cook Raw beef&#10;        - Woodcutting Tree at Varrock GE">
+    <list default="true" id="1ecde549-5517-42fd-bd46-cfc01b12f104" name="Changes" comment="Version 0.12&#10;FULL UPDATE:&#10;litte fix. First release&#10;____________________________________&#10;-- UI&#10;    - Collector&#10;        - Collect cowhide and bank it&#10;        - Collect Bones and Bank it.&#10;        - Collect Raw Salmon and Bank it.&#10;    - XP Farming&#10;        - Burry Bone&#10;        - Cook Raw beef&#10;        - Woodcutting Tree at Varrock GE">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/aiocollector/bot/BotMain/BonesBurier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aiocollector/bot/BotMain/BonesBurier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/aiocollector/bot/BotMain/BotMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aiocollector/bot/BotMain/BotMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/aiocollector/bot/BotMain/SalmonCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/aiocollector/bot/BotMain/SalmonCollector.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +60,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Blast-Pop/Documents/AIOCollector",
+    "last_opened_file_path": "C:/Users/Blast-Pop/Documents/CODES/Java/Dreambot/AIOCollector",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -99,7 +99,8 @@
       <workItem from="1731681700139" duration="262000" />
       <workItem from="1731706491077" duration="447000" />
       <workItem from="1732119752994" duration="10347000" />
-      <workItem from="1732168757777" duration="5353000" />
+      <workItem from="1732168757777" duration="13297000" />
+      <workItem from="1732339509511" duration="8900000" />
     </task>
     <task id="LOCAL-00001" summary="Version 0.5">
       <option name="closed" value="true" />
@@ -165,7 +166,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732123855011</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Version 0.12&#10;FULL UPDATE:&#10;litte fix. First release&#10;____________________________________&#10;-- UI&#10;    - Collector&#10;        - Collect cowhide and bank it&#10;        - Collect Bones and Bank it.&#10;        - Collect Raw Salmon and Bank it.&#10;    - XP Farming&#10;        - Burry Bone&#10;        - Cook Raw beef&#10;        - Woodcutting Tree at Varrock GE">
+      <option name="closed" value="true" />
+      <created>1732178432588</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1732178432588</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +210,7 @@
     <MESSAGE value="Version 0.8&#10;FULL UPDATE:&#10;-- UI&#10;    - Collector&#10;        - Collect cowhide and bank it&#10;        - Collect Bones and Bank it.&#10;    - XP Farming&#10;        - Burry Bone&#10;        - Cook Raw beef" />
     <MESSAGE value="Version 0.9&#10;FULL UPDATE:&#10;litte fix. First release&#10;____________________________________&#10;-- UI&#10;    - Collector&#10;        - Collect cowhide and bank it&#10;        - Collect Bones and Bank it.&#10;    - XP Farming&#10;        - Burry Bone&#10;        - Cook Raw beef" />
     <MESSAGE value="Version 0.10&#10;FULL UPDATE:&#10;litte fix. First release&#10;____________________________________&#10;-- UI&#10;    - Collector&#10;        - Collect cowhide and bank it&#10;        - Collect Bones and Bank it.&#10;    - XP Farming&#10;        - Burry Bone&#10;        - Cook Raw beef&#10;        - Woodcutting Tree at Varrock GE" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 0.10&#10;FULL UPDATE:&#10;litte fix. First release&#10;____________________________________&#10;-- UI&#10;    - Collector&#10;        - Collect cowhide and bank it&#10;        - Collect Bones and Bank it.&#10;    - XP Farming&#10;        - Burry Bone&#10;        - Cook Raw beef&#10;        - Woodcutting Tree at Varrock GE" />
+    <MESSAGE value="Version 0.12&#10;FULL UPDATE:&#10;litte fix. First release&#10;____________________________________&#10;-- UI&#10;    - Collector&#10;        - Collect cowhide and bank it&#10;        - Collect Bones and Bank it.&#10;        - Collect Raw Salmon and Bank it.&#10;    - XP Farming&#10;        - Burry Bone&#10;        - Cook Raw beef&#10;        - Woodcutting Tree at Varrock GE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 0.12&#10;FULL UPDATE:&#10;litte fix. First release&#10;____________________________________&#10;-- UI&#10;    - Collector&#10;        - Collect cowhide and bank it&#10;        - Collect Bones and Bank it.&#10;        - Collect Raw Salmon and Bank it.&#10;    - XP Farming&#10;        - Burry Bone&#10;        - Cook Raw beef&#10;        - Woodcutting Tree at Varrock GE" />
   </component>
 </project>

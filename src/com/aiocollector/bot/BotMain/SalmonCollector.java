@@ -6,6 +6,7 @@ import org.dreambot.api.methods.item.GroundItems;
 import org.dreambot.api.methods.map.Area;
 import org.dreambot.api.methods.map.Tile;
 import org.dreambot.api.methods.walking.impl.Walking;
+import org.dreambot.api.script.listener.ChatListener;
 import org.dreambot.api.wrappers.items.GroundItem;
 import org.dreambot.api.methods.interactive.Players;
 
@@ -28,7 +29,7 @@ public class SalmonCollector {
     }
 
     private void collect() {
-        Area salmonArea = new Area(3099, 3434, 3113, 3418); // Zone des Raw Salmon au Village Barbare
+        Area salmonArea = new Area(3100, 3425, 3109, 3434); // Zone des Raw Salmon au Village Barbare
         if (!salmonArea.contains(Players.getLocal())) {
             Tile randomTile = salmonArea.getRandomTile();
             Walking.walk(randomTile);
@@ -46,7 +47,7 @@ public class SalmonCollector {
     }
 
     private void goToBank() {
-        Area bankArea = new Area(3093, 3490, 3100, 3425); // Zone de la banque d'Edgeville
+        Area bankArea = new Area(3184, 3442, 3210, 3422); // Zone de la banque de Varrock
         if (!bankArea.contains(Players.getLocal())) {
             Walking.walk(bankArea.getRandomTile());
         } else {
